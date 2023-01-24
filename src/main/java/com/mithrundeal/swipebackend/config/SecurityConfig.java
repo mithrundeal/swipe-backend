@@ -23,7 +23,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-
     /**
      * @implNote secure the endpoint with each endpoint password
      */
