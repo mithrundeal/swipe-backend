@@ -12,17 +12,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-public class LoginController {
+public class AuthenticateController {
 
     @Autowired
     UserRepository userRepository;
@@ -36,7 +30,7 @@ public class LoginController {
     @Autowired
     private JwtUserDetailsService userDetailsService;
 
-    @RequestMapping("/login")
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> login(@RequestBody SwipeUser swipeUser) {
 
         try {

@@ -1,6 +1,6 @@
 package com.mithrundeal.swipebackend.dto;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "SwipeUsers")
